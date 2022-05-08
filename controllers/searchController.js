@@ -14,14 +14,15 @@ module.exports={
     axios.get('https://api.giphy.com/v1/gifs/search',{params:{
        api_key:process.env.gifyKey,
        q:search,
-       limit:100
+       limit:3
       }
      }).then((result)=> {
       data=result.data.data
+      console.log(data.images)
       const returnData = data.map((result) => {
-          return result.url
+          return result.images.original.url
         })
-
+      
 
       res.send(returnData)
       }
