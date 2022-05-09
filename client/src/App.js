@@ -44,8 +44,9 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Eric Test App</h1>
+      <h1 className="mb-1">Eric Test App</h1>
       <input
+        className="mb-1"
         type="text"
         placeholder="search"
         value={search}
@@ -71,7 +72,7 @@ function App() {
           Back
         </button>
       </div>
-      <Results results={results} />
+      <Results className="center" results={results} />
     </div>
   );
 }

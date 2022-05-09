@@ -13,5 +13,10 @@ code {
 }
 
 .card {
-  max-height: 300px;
+  margin-top: 5px;
+  max-width: 300px;
+  height: 300px;
+  justify-content: center;
+  border: 3px solid grey;
+  overflow: hidden;
 }
