@@ -6,15 +6,16 @@ export default function Results(props) {
   const renderResults =() => {
     return results.map((item,index) => {
      return (
-      <div>
+      <div key={index} className="card">
        <img  src={item} className="img-fluid" alt="..."/> 
       </div>)
     })
   }
 
   return (
-    <div>
+    <div className="results-container">
       {renderResults()}
     </div>
   )
 }
+

@@ -44,8 +44,10 @@ function App() {
 
   return (
     <div className="container">
+      <h1>Eric Test App</h1>
       <input
         type="text"
+        placeholder="search"
         value={search}
         onChange={(e) => {
           updateSearch(e);

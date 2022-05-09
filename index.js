@@ -13,8 +13,7 @@ const port = process.env.PORT || 4000
 const searchRoutes = require('./routes/search')
 searchRoutes(app)
 
-
-
+//production react app serving
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'))
   app.get('/*',(req,res) => {
