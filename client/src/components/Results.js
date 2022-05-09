@@ -7,7 +7,7 @@ export default function Results(props) {
     return results.map((item,index) => {
      return (
       <div>
-       <img ket={index} src={item} className="img-fluid" alt="..."/> 
+       <img  src={item} className="img-fluid" alt="..."/> 
       </div>)
     })
   }

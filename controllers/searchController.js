@@ -12,8 +12,6 @@ module.exports={
     let data=[];
     let limit = 10
 
-    console.log("page is",page)
-
     axios.get('https://api.giphy.com/v1/gifs/search',{params:{
        api_key:process.env.GIFY_KEY,
        q:search,
@@ -22,21 +20,14 @@ module.exports={
       }
      }).then((result)=> {
       data=result.data.data
-      
       const returnData = data.map((result) => {
           return result.images.fixed_width.url
       })
       res.send(returnData)
       }
-     ) .catch(function (error) {
+     ).catch(function (error) {
       console.log(error);
       res.send([])
-    })
-    
-
-      
-  },
-  createUser(req,res,next){
-     res.send('createUser')
+    })  
   },
 }
