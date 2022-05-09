@@ -2,5 +2,5 @@
 
 module.exports =(app)=>{
   app.get('/api/search/test',searchController.test ) 
-  app.get('/api/search/search/:search',searchController.search ) 
+  app.get('/api/search/search/:search/:page',searchController.search ) 
 }

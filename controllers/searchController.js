@@ -8,26 +8,27 @@ module.exports={
   async search(req,res,next){
     
     let search = req.params.search
+    let page = req.params.page || 1
     let data=[];
+    let limit = 10
 
+    console.log("page is",page)
 
     axios.get('https://api.giphy.com/v1/gifs/search',{params:{
-       api_key:process.env.gifyKey,
+       api_key:process.env.GIFY_KEY,
        q:search,
-       limit:3
+       limit:limit,
+       offset:(page*limit)-limit
       }
      }).then((result)=> {
       data=result.data.data
-      console.log(data.images)
-      const returnData = data.map((result) => {
-          return result.images.original.url
-        })
       
-
+      const returnData = data.map((result) => {
+          return result.images.fixed_width.url
+      })
       res.send(returnData)
       }
      ) .catch(function (error) {
-    // handle error
       console.log(error);
       res.send([])
     })
